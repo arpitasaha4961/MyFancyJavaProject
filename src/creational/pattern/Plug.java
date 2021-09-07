@@ -1,4 +1,4 @@
-package creational.pattern.Plug;
+package creational.pattern;
 class Usplug {
     public double l;
     public double w;
