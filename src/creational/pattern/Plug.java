@@ -1,40 +1,37 @@
 package creational.pattern;
 class Usplug {
-    public double l;
-    public double w;
+    public double length;
+    public double width;
 
-    public Usplug(double l, double w) {
-        this.l = l;
-        this.w = w;
+    public Usplug(double length, double width) {
+        this.length = length;
+        this.width = width;
     }
 }
 
 
-class Europlug
-{
-    public double b;
-    public double h;
+class Europlug {
+    public double base;
+    public double hight;
 
-    public Europlug(double b, double h)
+    public Europlug(double base, double hight)
     {
-        this.b = b;
-        this.h = h;
+        this.base = base;
+        this.hight = hight;
     }
 }
 
-class plug
-{
+class plug {
    public static Usplug usplug ;
     public static double getRange(Usplug r)
     {
         usplug=r;
-        return usplug.l * usplug.w;
+        return usplug.length * usplug.width;
     }
 }
 
 
-class plugAdapter
-{
+class plugAdapter {
 
     plug pl;
     Europlug  europlug;
@@ -43,21 +40,21 @@ class plugAdapter
     {
         pl = new plug();
         europlug=t;
-        double l = europlug.b;
-        double w = 0.5*europlug.h;
+        double length = europlug.base;
+        double width = 0.5*europlug.hight;
 
-        Usplug r = new Usplug(l,w);
+        Usplug r = new Usplug(length,width);
         return plug.getRange(r);
     }
 
 }
 
-class Client
-{
+class Client {
     public static void main(String[] args)
     {
         plugAdapter pg=new plugAdapter();
-        Europlug t = new Europlug(20,10);
+        System.out.println("This is a Adapter Type design pattern ");
+        Europlug t = new Europlug(45,10);
         System.out.println("The us plug range is :" + pg.getRange(t));
 
     }
