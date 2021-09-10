@@ -3,11 +3,9 @@ class Usplug {
     public double length;
     public double width;
 
-<<<<<<< HEAD
     public Usplug(double length, double width) {
         this.length = length;
         this.width = width;
-=======
     // Jim: This is the singleton instance that will be used as the only one instance
     private static Usplug singletUsPlugInstance;
 
@@ -24,7 +22,6 @@ class Usplug {
     private Usplug() {
         this.l = 10;
         this.w = 5;
->>>>>>> branchY
     }
 }
 
@@ -33,7 +30,6 @@ class Europlug {
     public double base;
     public double hight;
 
-<<<<<<< HEAD
     public Europlug(double base, double hight)
     {
         this.base = base;
@@ -43,7 +39,6 @@ class Europlug {
 
 class plug {
    public static Usplug usplug ;
-=======
     // Jim: This is the singleton instance that will be used as the only one instance
 
     private static Europlug singletEuroPlugInstance;
@@ -79,7 +74,6 @@ class usplugadapter
         return uspa;
     }
    public static Usplug usplug = Usplug.getSingleton() ;
->>>>>>> branchY
     public static double getRange(Usplug r)
     {
         usplug=r;
@@ -100,25 +94,20 @@ class plugAdapter {
         double length = europlug.base;
         double width = 0.5*europlug.hight;
 
-<<<<<<< HEAD
         Usplug r = new Usplug(length,width);
         return plug.getRange(r);
-=======
         Usplug r = Usplug.getSingleton();
         return pl.getRange(r);
->>>>>>> branchY
     }
 
 }
 
-<<<<<<< HEAD
 class Client {
     public static void main(String[] args)
     {
         plugAdapter pg=new plugAdapter();
         System.out.println("This is a Adapter Type design pattern ");
         Europlug t = new Europlug(45,10);
-=======
 // Jim: Class name has to be same as file-name
 class Plug
 {
@@ -126,7 +115,6 @@ class Plug
     {
         plugAdapter pg=new plugAdapter();
         Europlug t = Europlug.getSingleton();
->>>>>>> branchY
         System.out.println("The us plug range is :" + pg.getRange(t));
 
     }
